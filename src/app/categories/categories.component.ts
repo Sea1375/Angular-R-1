@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {UsageService} from '../usage.service';
-import {Category} from '../category';
+
+import { UsageService } from '../core/services/usage.service';
+import { Category } from '../core/models/category';
 
 @Component({
   selector: 'app-categories',
@@ -8,15 +9,28 @@ import {Category} from '../category';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-  title: 'Select Category';
-  categories: Category[];
 
-  constructor(private usageService: UsageService) { }
+  categories: Category[];
+  isLoading = false;
+
+  constructor(
+    private usageService: UsageService
+  ) { }
 
   ngOnInit(): void {
     this.getCategories();
   }
-  getCategories(): void {
-    this.usageService.getCategories().subscribe(categories => this.categories = categories);
+
+  private async getCategories() {
+    try {
+      this.isLoading = true;
+      this.categories = await this.usageService.getCategories().toPromise();
+    } catch (e) {
+      console.log(e);
+      // TODO: display error as snack bar
+    } finally {
+      this.isLoading = false;
+    }
   }
+
 }

@@ -1,0 +1,30 @@
+<div class="container pt-lg-5">
+  <h2 class="pt-5">{{ title }}</h2>
+  <button class="btn btn-primary" (click)="sendData()">Send data</button>
+  <div class="row">
+    <div class="col-12 col-xl-4" >
+      <div class="scrolling-wrapper border shadow overflow-auto p-3">
+        <div class="d-flex border shadow cursor-pointer mb-4 p-3"
+             *ngFor="let film of films"
+             [routerLink]="film.id"
+             routerLinkActive="bg-primary">
+          <div class="image-wrapper">
+            <img [src]="film.location" alt="Title">
+          </div>
+          <div class="p-3">
+            <h5>{{ film.title }}</h5>
+            <p>{{ film.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-xl-8">
+      <div class="scrolling-wrapper border shadow overflow-auto p-3">
+        <h5 class="text-center">{{ selectedCategory.name}}</h5>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+</div>
+

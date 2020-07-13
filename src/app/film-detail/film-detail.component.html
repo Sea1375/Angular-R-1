@@ -1,0 +1,33 @@
+<ng-container *ngIf="film && !isLoading">
+  <div class="row mt-lg-5">
+    <div class="col-12 col-xl-8">
+      <video class="video-fluid z-depth-1" loop controls muted>
+        <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="col-12 col-xl-4 px-3">
+      <div class="image-wrapper">
+        <img [src]="producer.location" alt="avatar" class="rounded-circle mx-auto">
+      </div>
+      <div class="p-2">
+        <p>Name: {{ producer.name }}</p>
+        <p>Birthday: {{ producer.birthday }}</p>
+        <p>Description: {{ producer.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="p-3">
+    <p>Title: {{ film.title }}</p>
+    <p>Description: {{ film.description }}</p>
+    <p>Scripts:</p>
+    <p class="p-3">{{ film.scripts }}</p>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!film && !isLoading">
+  Invalid film id
+</ng-container>
+
+<div *ngIf="isLoading">
+  Loading...
+</div>

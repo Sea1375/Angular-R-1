@@ -1,0 +1,19 @@
+.scrolling-wrapper {
+  width: 100%;
+  height: 700px;
+}
+.image-wrapper {
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+  height: 100px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.video-fluid {
+  width: 100%;
+  height: auto;
+}

@@ -1,4 +1,4 @@
-import {Category} from './category';
+import { Category } from '../models/category';
 
 export const CATEGORIES: Category[] = [
   {id: 1, name: 'rose', description: 'This is the films about the rose.', location: '/assets/1.jpg'},
