@@ -1,0 +1,9 @@
+<div class="d-flex align-items-center border shadow rounded p-3" routerLink="category/{{category.id}}">
+  <div class="image-wrapper">
+    <img [src]="category.location" alt="Nature">
+  </div>
+  <div class="pl-4">
+    <h5>{{ category.name }}</h5>
+    <p>{{ category.description }}</p>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-12 col-xl-8">
+    <video class="video-fluid z-depth-1" controls muted>
+      <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="col-12 col-xl-4 mt-xl-3 align-items-center">
+    <div class="image-wrapper">
+      <img [src]="producer.location" class="rounded-circle" alt="Producer">
+    </div>
+    <div class="p-3">
+      <h5>Name: {{ producer.name }}</h5>
+      <p>Birthday: {{ producer.birthday }}</p>
+      <p>Description: {{ producer.description }}</p>
+    </div>
+  </div>
+  <div class="px-4 mt-lg-5">
+    <h5>Title: {{ film.title }}</h5>
+    <p>Description: {{ film.description }}</p>
+    <p>Scripts: </p>
+    <p class="px-3">{{ film.scripts }}</p>
+  </div>
+</div>
